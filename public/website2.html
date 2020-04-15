@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <link href="static/website1.css" type="text/css" media="screen" rel="stylesheet"> 
+</link>
+    
+    <title>DARK</title>
+</head>
+<body>
+    
+    
+    <center><p>DARK: Tracking de Activos</p></center>
+    <div id="usuario">
+        <table>
+            <tr>
+                <th  class="numero" >Usuarios: </th>
+                <td id="num" class="numero">0</td>
+            </tr>
+            
+        </table>
+        
+
+    </div>
+    <table>
+        <tr>
+            <th id="izquerdo"> Latitud </th>
+            <td id="lat">Not found</td>
+            
+        </tr>
+        <tr>
+            <th id="izquerdo"> Longitud </th>
+            <td id="long">Not found</td>
+            
+        </tr>
+        <tr>
+            <th id="izquerdo"> Fecha </th>
+            <td id="fecha">Not found</td>
+            
+        </tr>
+        <tr>
+            <th id="izquerdo"> Hora </th>
+            <td id="hora">Not found</td>
+            
+        </tr>
+     </table>
+     <div id="map"></div>
+    <!-- <p>Latitud: <h6 id="lat"> </h6><br/>
+        Longitud: <h6 id="long"> </h6><br/>
+        Fecha: <h6 id="fecha"> </h6><br/>
+    </p> -->
+    <script src="/socket.io/socket.io.js"></script>
+    
+    <script src="static/website2.js" ></script>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@500&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="datetimes" id="dtp" />
+    <script>
+     window.onload = function(){
+
+            $(function() {
+                $('input[name="datetimes"]').daterangepicker({
+                timePicker: true,
+                timerFormat: 'HH:mm:ss',
+                singleDatePicker: true,
+                startDate: moment().subtract(12, 'hour'),
+                endDate: moment(),
+                timePicker24Hour: false,
+                timePickerIncrement: 1,
+                timePickerSeconds: true,
+                "maxDate": moment(),
+                startValue: moment(),
+                locale: {
+                    format: 'YYYY-MM-DD HH:mm:ss A'
+                },
+                
+                },function(start,end) {
+                });
+                $('input[name="datetimes"]').html(moment().subtract('days', 29).format('D MMMM YYYY') + ' - ' + moment().format('D MMMM YYYY'));
+
+            });
+            }
+     </script>
+</body>
+</html>

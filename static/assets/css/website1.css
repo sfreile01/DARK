@@ -1,0 +1,20 @@
+
+#map{
+    background-color: aliceblue;
+    height: 92%;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    
+    z-index: 3;
+}
+#usuario{
+    background-color: cornsilk;
+    top: 5%;
+    right: 0;
+    height: 7%;
+    width: 15%;
+    position: absolute;
+
+}
