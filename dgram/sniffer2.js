@@ -2,7 +2,7 @@ const { server } = require('../index');
 const { con } = require('../index');
 var mensaje;
 var PUERTO = 5003;
-var DIRECCION="192.168.0.11";
+var DIRECCION="172.31.34.241;
 var longitud, latitud, fech,Hora,Fecha;
 server.on('error', (err) => {
     console.log(`server error:\n${err.stack}`);
