@@ -1,11 +1,11 @@
 let coord, marcador;
 var  long,lat, m;
-const tileurl = 'https://a.tile.openstreetmap.de/{z}/{x}/{y}.png';
+const tileurl = 'https://a.tile.openstreetmap.org/{z}/{x}/{y}.png';
 const tileurl2 = 'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png';
 
 var map = L.map('map').setView([51.505, -0.09], 20);
 
-L.tileLayer(tileurl2, {
+L.tileLayer(tileurl, {
 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 marcador = L.marker([0,0]);

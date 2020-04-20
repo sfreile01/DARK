@@ -18,7 +18,7 @@
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../static/assets/css/main.css" />
-		<link rel="stylesheet" href="../static/assets/css/website2.css">
+		<link rel="stylesheet" href="../static/assets/css/historic.css">
 		
 		<noscript><link rel="stylesheet" href="../static/assets/css/noscript.css" /></noscript>
 	</head>
@@ -26,19 +26,19 @@
 		<div id="page-wrapper">
 
 			<!-- Header -->
-			<header id="header">
+            <header id="header">
                 <h1 id="logo"><a href="#">DARK</a></h1>
                 <nav id="nav">
                     <ul>
                         <li><a href="../public/index.html">Home</a></li>
-                        <li><a href="../public/real_time.html">Real Time</a></li>
+                        <li><a href="../public/real_time.html">Real time</a></li>
                         <li>
                             <a href="#">Historical</a>
                             <ul>
-                                <li><a href="../public/historical.html">Where was my truck ..?</a></li>
-                                <li><a href="../public/historical2.html">How many times does my truck pass by ...?</a></li>
-                             
-                            </ul>
+                                <li><a href="../public/historical.html">Where is my track when...?</a></li>
+                                <li><a href="../public/historical2.html">How much time ...?</a></li>
+                                
+                                
                             </ul>
                         </li>
                         
@@ -49,44 +49,46 @@
 
 			<!-- Main -->
 			<!-- <input type="text" name="datetimes" id="dtp" /> -->
-				<div id="main" class="wrapper style1">
-					<div id="box">
-						<h1 id="consulta">Consulta</h1>
-						<div class="box1">
-							<div class="label">
-								Fecha incial :
-							</div>
-							<input type="date" id="f1" />
-						</div>
-						<div class="box1">
-							<div class="label">
-								Hora incial :
-							</div>
-							<input type="time" id="h1" />
-						</div>
-						<div class="box1">
-							<div class="label">
-								Fecha final :
-							</div>
-							<input type="date" id="f2" />
+				<div id="busqueda">
+					<h1 id="consulta">Consulta</h1>
 					
-						</div>
-						<div class="box1">
-							<div class="label">
-								Hora final :
-							</div>
-							<input type="time" id="h2" />
-						</div>
-						<br>
+				<div class="label" id="ra">
+					Radio(m):
+				</div>
+				<input type="text" id="r" /> <br>					
+			
+			
+				<ul>
+					<input type="submit" class="button primary" id="consultar" value="Buscar"><br>
+				</ul>
+				</div>
+				
+			
+			
+			
+				<div id="result">
+					
+				</div>
+				
+		
+			
+
+			
+			
+			
+			
+				<div id="main" class="wrapper style1">
 						
-						<ul>
-							<li><input type="submit" class="button primary" id="consultar" value="Buscar"></li>
-						</ul>
+						
+						
+						
+						
 					
 						
 					
 					<div id="map" >
 
+					
 					</div>
 				</div>
 
@@ -109,8 +111,8 @@
 			
 		</script>
 		<script src="../static/assets/js/datetimepicker.js"></script>
-		<script src="../static/assets/js/historicos.js"></script>
-			
+		<script src="../static/assets/js/jistorical2.js"></script>
+		
 
 	</body>
 </html>

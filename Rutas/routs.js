@@ -46,3 +46,24 @@ app1.get('/', (reg, res) => {
     }
 
 });
+
+app1.post("/htrc2",(req,res)=>{
+    if (con){
+        console.log("CONECTED!");
+        
+        var sql ="SELECT *, lat, lon, ( 6371 * acos(cos(radians(?)) * cos(radians(lat)) * cos(radians(lon) - radians(?)) + sin(radians(?)) * sin(radians(lat)))) AS distance FROM dark HAVING distance < ? ORDER BY id;";
+        var value=[
+          req.body.lat1,
+          req.body.lon,
+          req.body.lat2,
+          req.body.radio          
+        ];
+        
+        con.query(sql,value, function(e,result){
+          if(e) throw e;
+          res.json(result);
+        });
+    }else{
+      console.log("error with db")
+    }
+});

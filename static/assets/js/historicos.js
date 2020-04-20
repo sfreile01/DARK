@@ -1,12 +1,12 @@
 let coord, marcador;
 var  long,lat, m, poly;
 var  vector_c=[];
-const tileurl = 'https://a.tile.openstreetmap.de/{z}/{x}/{y}.png';
+const tileurl = 'https://a.tile.openstreetmap.org/{z}/{x}/{y}.png';
 const tileurl2 = 'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png';
 
 var map = L.map('map').setView([10.920533, -74.765402], 13);
 
-L.tileLayer(tileurl2, {
+L.tileLayer(tileurl, {
 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 var f1 = document.getElementById("f1");
