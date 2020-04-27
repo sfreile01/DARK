@@ -8,7 +8,12 @@ var map = L.map('map').setView([51.505, -0.09], 20);
 L.tileLayer(tileurl, {
 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
-marcador = L.marker([0,0]);
+var icono = new L.Icon({
+    iconUrl: '../static/images/camion.svg',
+    iconSize: [50, 50],
+    iconAnchor: [25, 50]
+  });
+marcador = L.marker([0,0],{icon:icono});
 marcador.addTo(map);
 var polyline;
 function actual_data (){

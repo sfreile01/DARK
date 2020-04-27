@@ -9,13 +9,16 @@
     z-index: 3;
 }
 #busqueda{
-    position: relative;
-    height: 50%;
+    position: absolute;
+    height: 30%;
+    width: 17%;
+    align-content: center;
+    left: 2%;
 }
 #result{
     background-color:#262732;
-    width: 14%;
-    height: 50%;
+    width: 20%;
+    height: 57%;
     left: 2%;
     bottom:0;
     position: absolute;
@@ -27,18 +30,27 @@
     scrollbar-width: 10px;
 }
 #consultar{
-    position: relative;
-    left: 4.5%;
+    position: absolute;
+    left: 2%;
+    top: 80%;
+
+}
+#demo{
+    position: absolute;
+    top: 60%;
+    left: 2%;
 }
 #ra{
-    position: relative;
+    position: absolute;
     left: 2%;
+    top:30%;
+    font-size: 15pt;
 }
 #consulta{
     position: relative;
     text-align: left;
-    top: 10%;
-    left: 4.5%;
+    top: 0%;
+    left: 2%;
     border-color: whitesmoke;
     font-size: 250%;
 }
@@ -46,10 +58,11 @@
     color:black;
 }
 #r{
-    position: relative;
+    position: absolute;
     background-color: white;
-    width: 15%;
+    width: 50%;
     color: black;
-    left: 1cm;
+    left: 2%;
+    top:40%;
 }
 

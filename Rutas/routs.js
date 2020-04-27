@@ -29,13 +29,14 @@ app1.get('/', (reg, res) => {
   console.log(req.body);
   if (con) {
       console.log("Connected!");
-      var sql = "SELECT * FROM dark where fecha between ? and ? and hora between ? and ? ";
+      var sql = "SELECT * FROM dark where TIMESTAMP(fecha,hora) BETWEEN TIMESTAMP(?,?) AND TIMESTAMP(?,?)";
       var value = [
         req.body.f1,
-        req.body.f2,
         req.body.h1,
+        req.body.f2,
         req.body.h2
       ];
+      console.log(value)
       con.query(sql, value, function(err, result) {
         if (err) throw err;
         res.json(result);
@@ -51,12 +52,14 @@ app1.post("/htrc2",(req,res)=>{
     if (con){
         console.log("CONECTED!");
         
-        var sql ="SELECT *, lat, lon, ( 6371 * acos(cos(radians(?)) * cos(radians(lat)) * cos(radians(lon) - radians(?)) + sin(radians(?)) * sin(radians(lat)))) AS distance FROM dark HAVING distance < ? ORDER BY id;";
+        var sql ="SELECT *, lat, lon, ( 6371 * acos(cos(radians(?)) * cos(radians(lat)) * cos(radians(lon) - radians(?)) + sin(radians(?)) * sin(radians(lat)))) AS distance FROM dark HAVING distance < ? AND fecha BETWEEN ? and ? ORDER BY id;";
         var value=[
           req.body.lat1,
           req.body.lon,
           req.body.lat2,
-          req.body.radio          
+          req.body.radio,
+          req.body.f1,
+          req.body.f2          
         ];
         
         con.query(sql,value, function(e,result){

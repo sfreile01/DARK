@@ -24,7 +24,7 @@ let server1 = http.createServer(app);
 //static files 
 app.use(express.static(path.join(__dirname,"../views")));
 app.use("/static",express.static('./static/'));
-const Port = process.env.PORT || 8080;
+const Port = process.env.PORT || 80;
 //public file 
 app.set("public", __dirname + "/public");
 app.use("/public", express.static('./public/'));

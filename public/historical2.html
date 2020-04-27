@@ -10,12 +10,11 @@
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
 		crossorigin=""/>
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-		
-		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-		
+		<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+		<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+		|<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../static/assets/css/main.css" />
 		<link rel="stylesheet" href="../static/assets/css/historic.css">
@@ -30,13 +29,13 @@
                 <h1 id="logo"><a href="#">DARK</a></h1>
                 <nav id="nav">
                     <ul>
-                        <li><a href="../public/index.html">Home</a></li>
-                        <li><a href="../public/real_time.html">Real time</a></li>
+                        <li><a href="../public/index.html" style="color: white;">Home</a></li>
+                        <li><a href="../public/real_time.html"style="color: white;">Real time</a></li>
                         <li>
-                            <a href="#">Historical</a>
+                            <a href="#"style="color: white;">Historical</a>
                             <ul>
                                 <li><a href="../public/historical.html">Where is my track when...?</a></li>
-                                <li><a href="../public/historical2.html">How many times does my truck pass by ...?</a></li>
+                                <li><a href="../public/historical2.html">How much time ...?</a></li>
                                 
                                 
                             </ul>
@@ -52,12 +51,12 @@
 				<div id="busqueda">
 					<h1 id="consulta">Consulta</h1>
 					
-				<div class="label" id="ra">
+				<div class="label" id="ra" style="color: white;">
 					Radio(m):
 				</div>
-				<input type="text" id="r" /> <br>					
+				<input type="text" id="r" value = "100"/> <br>					
 			
-			
+				<input type="text" id="demo" name="datefilter" />
 				<ul>
 					<input type="submit" class="button primary" id="consultar" value="Buscar"><br>
 				</ul>
@@ -95,6 +94,22 @@
 			
 
 		<!-- Scripts -->
+		<script>
+			$('#demo').daterangepicker({
+				timePicker: false,
+			  
+			  singleDatePicker: false,
+			  startDate: moment().subtract(24, 'hour'),
+			  endDate: moment(),
+			  
+			  timePickerSeconds: false,
+			  "maxDate": moment(),
+			  startValue: moment(),
+			  locale: {
+				format: 'YYYY-MM-DD'
+			  },
+		});
+			</script>
 		<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
 		integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
 		crossorigin=""></script>
@@ -107,10 +122,7 @@
 		<script src="../static/assets/js/breakpoints.min.js"></script>
 		<script src="../static/assets/js/util.js"></script>
 		<script src="../static/assets/js/main.js"></script>
-		<script>
-			
-		</script>
-		<script src="../static/assets/js/datetimepicker.js"></script>
+		<!-- <script src="../static/assets/js/datetimepicker.js"></script> -->
 		<script src="../static/assets/js/jistorical2.js"></script>
 		
 

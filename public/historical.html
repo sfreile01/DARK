@@ -10,15 +10,15 @@
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
 		crossorigin=""/>
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-		
-		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-		
+		<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+		<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+		|<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../static/assets/css/main.css" />
 		<link rel="stylesheet" href="../static/assets/css/website2.css">
+		<link rel="stylesheet" href="../static/assets/css/main.css" />
+		
 		
 		<noscript><link rel="stylesheet" href="../static/assets/css/noscript.css" /></noscript>
 	</head>
@@ -30,17 +30,19 @@
                 <h1 id="logo"><a href="#">DARK</a></h1>
                 <nav id="nav">
                     <ul>
-                        <li><a href="../public/index.html">Home</a></li>
-                        <li><a href="../public/real_time.html">Real Time</a></li>
-                        <li>
-                            <a href="#">Historical</a>
+                        <li><a href="../public/index.html" style="color: white;">Home</a></li>
+                        <li><a href="../public/real_time.html" id="q" style="color: white;">Real Time</a></li>
+						
+						<li>
+                            <a href="#" style="color: white;">Historical</a>
                             <ul>
-                                <li><a href="../public/historical.html">Where was my truck ..?</a></li>
-                                <li><a href="../public/historical2.html">How many times does my truck pass by ...?</a></li>
-                             
-                            </ul>
+								<li><a href="../public/historical.html" style="color: white;">Where was my truck ..?</a></li>
+                                <li><a href="../public/historical2.html" style="color: white;">How many times does my truck pass by ...?</a></li>
                             </ul>
                         </li>
+					
+                           
+                       
                         
                         
                     </ul>
@@ -49,39 +51,22 @@
 
 			<!-- Main -->
 			<!-- <input type="text" name="datetimes" id="dtp" /> -->
+			
 				<div id="main" class="wrapper style1">
-					<div id="box">
-						<h1 id="consulta">Consulta</h1>
-						<div class="box1">
-							<div class="label">
-								Fecha incial :
-							</div>
-							<input type="date" id="f1" />
-						</div>
-						<div class="box1">
-							<div class="label">
-								Hora incial :
-							</div>
-							<input type="time" id="h1" />
-						</div>
-						<div class="box1">
-							<div class="label">
-								Fecha final :
-							</div>
-							<input type="date" id="f2" />
-					
-						</div>
-						<div class="box1">
-							<div class="label">
-								Hora final :
-							</div>
-							<input type="time" id="h2" />
-						</div>
-						<br>
 						
-						<ul>
-							<li><input type="submit" class="button primary" id="consultar" value="Buscar"></li>
-						</ul>
+						<div id="buscar">
+							
+								<h2 id="letra" style="color: white;" >Seleccione el rango de busqueda</h2>
+							<input type="text" id="demo" name="datefilter" />
+							
+							<ul>
+								<input type="submit" class="button primary" id="consultar" value="Buscar" >
+							</ul>
+							
+							
+						
+						</div>
+						
 					
 						
 					
@@ -93,10 +78,26 @@
 			
 
 		<!-- Scripts -->
+		<script>
+		$('#demo').daterangepicker({
+			timePicker: true,
+          timerFormat: 'HH:mm:ss',
+          singleDatePicker: false,
+          startDate: moment().subtract(24, 'hour'),
+          endDate: moment(),
+          timePicker24Hour: false,
+          timePickerIncrement: 1,
+          timePickerSeconds: true,
+          "maxDate": moment(),
+          startValue: moment(),
+          locale: {
+            format: 'YYYY-MM-DD HH:mm:ss A'
+          },
+	});
+		</script>
 		<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
 		integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
 		crossorigin=""></script>
-		
 		<script src="../static/assets/js/jquery.min.js"></script>
 		<script src="../static/assets/js/jquery.scrolly.min.js"></script>
 		<script src="../static/assets/js/jquery.dropotron.min.js"></script>
@@ -105,10 +106,8 @@
 		<script src="../static/assets/js/breakpoints.min.js"></script>
 		<script src="../static/assets/js/util.js"></script>
 		<script src="../static/assets/js/main.js"></script>
-		<script>
-			
-		</script>
-		<script src="../static/assets/js/datetimepicker.js"></script>
+		
+		<!-- <script src="../static/assets/js/datetimepicker.js"></script> -->
 		<script src="../static/assets/js/historicos.js"></script>
 			
 
