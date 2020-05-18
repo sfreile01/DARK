@@ -1,10 +1,10 @@
 //data base 
 var mysql = require('mysql');
 module.exports.con = mysql.createConnection({
-  host: "design.ck9qlt1qutiu.us-east-1.rds.amazonaws.com",
-  user: "dark",
-  password: "mr01121998",
-  database: 'design'
+  host: "",
+  user: "",
+  password: "",
+  database: ''
 });
 
 //Sniffer
